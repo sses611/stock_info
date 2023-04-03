@@ -1,4 +1,4 @@
-var req_url = 'http://apis.data.go.kr/1160100/service/GetStocDiviInfoService/getDiviInfo?'
+var req_url = 'http://apis.data.go.kr/1160100/service/GetStocDiviInfoService/getDiviInfo'
 var serviceKeyStr = "yVuS2h%2Fn6vH7khxL68QEYxgERpm6yXqauRIDptTSGqAlehwhW5E4PQ9CJO4y%2FoxGujJHRXd3H8D%2BOuv5Vfhldw%3D%3D"
 
 function OutPutString(message, style, mode)
@@ -27,11 +27,12 @@ function GetStoreList() {
 
 
     //금융위원회_주식배당정보
-    LoadData("http://apis.data.go.kr/1160100/service/GetStocDiviInfoService/getDiviInfo?pageNo=1&numOfRows=1&resultType=json&stckIssuCmpyNm=" + 
-    encodeURI(document.getElementById('cname').value) + "&serviceKey=" + serviceKeyStr, 0);
+    LoadData(req_url+"?pageNo=1&numOfRows=1&resultType=json&stckIssuCmpyNm=" +
+    encodeURI(document.getElementById('cname').value) + "&scrsItmsKcdNm=" + encodeURI(document.getElementById('ctype').value) + "&serviceKey=" + serviceKeyStr, 0);
 } 
 
 function LoadData(url, mode) {
+    console.log(url);
     $.ajax({
         crossOrigin: true,
         proxy: "proxy.php",
@@ -70,8 +71,8 @@ function ParseDate(str) {
 }
 
 function ParseJSON0(data) {
-    const obj = JSON.parse(data);
-    item = obj.response.body.items.item[0];
+    item = data.response.body.items.item[0];
+    console.log(item);
     if (item === undefined)
     {
         OutPutString('<b>주식배당정보 데이터가 없습니다.</b>', false, 'result0');
@@ -116,8 +117,7 @@ function ParseJSON0(data) {
 }
 
 function ParseJSON1(data) {
-    const obj = JSON.parse(data);
-    item = obj.response.body.items.item[0];
+    item = data.response.body.items.item[0];
     if (item === undefined)
         OutPutString('<b>주식발행정보 데이터가 없습니다.</b>', false, 'result1');
     else
@@ -133,8 +133,7 @@ function ParseJSON1(data) {
 }
 
 function ParseJSON2(data, id) {
-    const obj = JSON.parse(data);
-    item = obj.response.body.items.item[id];
+    item = data.response.body.items.item[id];
     if (item === undefined)
         OutPutString('<b>주식시세정보 데이터가 없습니다.</b>', false, 'result2');
     else
@@ -160,11 +159,11 @@ function ParseJSON2(data, id) {
 
         var labelArr = [];
         for (var i=id; i>=0; i--) {
-           labelArr.push(ParseDate(obj.response.body.items.item[i].basDt));
+           labelArr.push(ParseDate(data.response.body.items.item[i].basDt));
         }
         var dataArr = [];
         for (var i=id; i>=0; i--) {
-           dataArr.push(obj.response.body.items.item[i].clpr);
+           dataArr.push(data.response.body.items.item[i].clpr);
         }
 
         ChartInit(); // 차트초기화
