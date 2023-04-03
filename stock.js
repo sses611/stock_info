@@ -1,4 +1,4 @@
-var req_url = 'https://apis.data.go.kr/1160100/service/GetStocDiviInfoService/getDiviInfo?'
+var req_url = 'http://apis.data.go.kr/1160100/service/GetStocDiviInfoService/getDiviInfo?'
 var serviceKeyStr = "yVuS2h%2Fn6vH7khxL68QEYxgERpm6yXqauRIDptTSGqAlehwhW5E4PQ9CJO4y%2FoxGujJHRXd3H8D%2BOuv5Vfhldw%3D%3D"
 
 function OutPutString(message, style, mode)
@@ -25,13 +25,13 @@ function GetStoreList() {
     
     ChartInit(); // 차트초기화
 
+
     //금융위원회_주식배당정보
-    LoadData(req_url + "serviceKey=" + serviceKeyStr+ "&pageNo=1&numOfRows=1&resultType=json&stckIssuCmpyNm=" + encodeURI(document.getElementById('cname').value), 0)
-    // console.log((LoadData(req_url + "serviceKey=" + serviceKeyStr+ "&pageNo=1&numOfRows=1&resultType=json&stckIssuCmpyNm=" + encodeURI(document.getElementById('cname').value), 0)));
+    LoadData("http://apis.data.go.kr/1160100/service/GetStocDiviInfoService/getDiviInfo?pageNo=1&numOfRows=1&resultType=json&stckIssuCmpyNm=" + 
+    encodeURI(document.getElementById('cname').value) + "&serviceKey=" + serviceKeyStr, 0);
 } 
 
 function LoadData(url, mode) {
-    // console.log(url);
     $.ajax({
         crossOrigin: true,
         proxy: "proxy.php",
@@ -39,7 +39,7 @@ function LoadData(url, mode) {
         url: url,
         success: function(data) {
             try
-            {   
+            {
                 if (mode == 0) // 주식배당정보
                     ParseJSON0(data);
                 else if (mode == 1) // 주식발행정보
@@ -52,7 +52,7 @@ function LoadData(url, mode) {
                 }
             } catch (e) {
                 if (mode == 0) // 주식배당정보
-                    OutPutString('<b>주식배당정보<br />데이터를 가져오는 동안 오류가 발생하였습니다...</b><br />' + e, false, 'result0');
+                    OutPutString('<b>주식배당정보<br />데이터를 가져오는 동안 오류가 발생하였습니다.</b><br />' + e, false, 'result0');
                 else if (mode == 1) // 주식발행정보
                     OutPutString('<b>주식발행정보<br />데이터를 가져오는 동안 오류가 발생하였습니다.</b><br />' + e, false, 'result1');
                 else if (mode == 2) // 주식시세정보
