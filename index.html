@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css"/>
+    <title>Document</title>
+    
+    <script src="./jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="./jquery.ajax-cross-origin.min.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
+</head>
+<body>
+    <div id ="wrap">
+        <!-- <header id="header">header</header> -->
+        <section id="main-content">
+            <div id="data-box">
+                <input type="text" id="Input-stock-name" value="삼성전자" />
+                
+                <select id="Input-stock-type" size="1">
+                    <option>보통주</option>
+                    <option>우선주</option>
+               </select>
+
+                <button type="button" id="Enter" onclick="GetStockData();">데이터 가져오기</button>
+            </div>
+
+            <div id ="data-layout">
+                <p id="result0"></p>
+            </div>
+        </section>
+        <!-- <footer id="footer">footer</footer>     -->
+    </div>
+</body>
+</html>
