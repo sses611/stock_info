@@ -1,5 +1,7 @@
-var req_url = 'https://apis.data.go.kr/1160100/service/GetStocDiviInfoService/getDiviInfo?'
-var serviceKeyStr = "yVuS2h%2Fn6vH7khxL68QEYxgERpm6yXqauRIDptTSGqAlehwhW5E4PQ9CJO4y%2FoxGujJHRXd3H8D%2BOuv5Vfhldw%3D%3D"
+var serviceKeyStr = "yVuS2h%2Fn6vH7khxL68QEYxgERpm6yXqauRIDptTSGqAlehwhW5E4PQ9CJO4y%2FoxGujJHRXd3H8D%2BOuv5Vfhldw%3D%3D";
+// var serviceKeyStr = "jITGhkiO9hs3MYkgibUy5aSql8wPmNvyA%2BIpZmLYnO0BihaVPAJTdPnxC%2F4J29cytOf8kfgmO6OnwTfBgsOm%2Bg%3D%3D";
+var stockData;
+var stockIndex;
 
 function OutPutString(message, style, mode)
 {
@@ -26,8 +28,8 @@ function GetStoreList() {
     ChartInit(); // 차트초기화
 
     //금융위원회_주식배당정보
-    LoadData(req_url + "serviceKey=" + serviceKeyStr+ "&pageNo=1&numOfRows=1&resultType=json&stckIssuCmpyNm=" + encodeURI(document.getElementById('cname').value), 0)
-    // console.log((LoadData(req_url + "serviceKey=" + serviceKeyStr+ "&pageNo=1&numOfRows=1&resultType=json&stckIssuCmpyNm=" + encodeURI(document.getElementById('cname').value), 0)));
+    LoadData("http://apis.data.go.kr/1160100/service/GetStocDiviInfoService/getDiviInfo?pageNo=1&numOfRows=1&resultType=json&stckIssuCmpyNm=" +
+    encodeURI(document.getElementById('cname').value) + "&serviceKey=" + serviceKeyStr, 0);
 } 
 
 function LoadData(url, mode) {
