@@ -5,21 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT">
     <meta http-equiv="Expires" content="-1">
+    <!-- https://www.next-t.co.kr/blog/%EA%B2%80%EC%83%89%EC%97%94%EC%A7%84%EC%B5%9C%EC%A0%81%ED%99%94-SEO-%ED%85%8C%ED%81%AC%EB%8B%88%EC%BB%ACSEO-%EB%A9%94%ED%83%80%ED%83%9C%EA%B7%B8-metatags-expires-%EC%86%8D%EC%84%B1 -->
     <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Cache-Control" content="no-cache">
-    
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <!-- https://www.blog-dreamus.com/post/cache-control-%EC%9D%B4-%ED%95%84%EC%9A%94%ED%95%9C-%EC%9D%B4%EC%9C%A0 -->
+    <meta http-equiv="Cache-Control" content="no-cache"> 
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
     <script type="text/javascript" src="./resource/chart.min.js"></script>
-    <script type="text/javascript" src="./app.js"></script>
+    <script type="module" src="./app.js"></script>
+    <script type="text/javascript" src="./app copy.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css">    
 </head>
 <body>
     <div id ="wrap">
-        <section id="header">header</section>
+        <!-- <section id="header">header</section> -->
         <section id="main-content">
             <div id="data-box">
                 <input id="cname" type="text" value="삼성전자" />
@@ -27,7 +30,8 @@
                     <option>보통주</option>
                     <option>우선주</option>
                 </select>
-                <button class="button" onclick="GetStoreList();">데이터 가져오기</button>
+                <!-- <button class="button">데이터 가져오기</button> -->
+                <button class="button" onclick="GetStoreList();">데이터 가져오기(app copy)</button>
             </div>
 
             <div id ="data-layout"> 
@@ -39,7 +43,7 @@
                 </div>
             </div>
         </section>
-        <section id="footer">footer</section>    
+        <!-- <section id="footer">footer</section>     -->
     </div>
 </body>
 </html>
