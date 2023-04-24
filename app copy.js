@@ -131,8 +131,8 @@ function ParseJSON0(data) {
         '<span>주식일반현금배당률　　　: ' + item.stckGenrCashDvdnRt + '<br /></span>' +
         '<span>주식일반배당률　　　　　: ' + item.stckGenrDvdnRt + '<br /></span>' +
         '<span>현금차등배당률　　　　　: ' + item.cashGrdnDvdnRt + '<br /></span>' +
-        '<span>주식차등배당률　　　　　: ' + item.stckGrdnDvdnRt + '<br />' +
-        '<span>주식결산월일　　　　　　: ' + item.stckStacMd
+        '<span>주식차등배당률　　　　　: ' + item.stckGrdnDvdnRt + '<br /></span>' +
+        '<span>주식결산월일　　　　　　: ' + item.stckStacMd+ '</span>'
         , false, 'result0');
 
         // 금융위원회_주식발행정보
