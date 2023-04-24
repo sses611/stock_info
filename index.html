@@ -15,15 +15,27 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
     <script type="text/javascript" src="./resource/chart.min.js"></script>
-    <script type="module" src="./app.js"></script>
+    <!-- <script type="module" src="./src/app.js"></script> -->
     <script type="text/javascript" src="./app copy.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="./style.css">    
+    <link rel="stylesheet" type="text/css" href="./src/reset.css">    
+    <link rel="stylesheet" type="text/css" href="./src/style.css">    
 </head>
 <body>
+    <header>
+        <img src="./img/logo.png" alt="logo" id="logo">
+        <h1>STOCK INFO</h1>
+        <div id="user">
+            <img src="./img/list.svg" alt="Setting" id="set">
+            <img src="./img/user-circle.svg" alt="User" id="user">
+        </div>
+    </header>
+
     <div id ="wrap">
-        <!-- <section id="header">header</section> -->
         <section id="main-content">
+            <div id="backimage">
+
+            </div>
             <div id="data-box">
                 <input id="cname" type="text" value="삼성전자" />
                 <select id="ctype" size="1">
@@ -31,19 +43,22 @@
                     <option>우선주</option>
                 </select>
                 <!-- <button class="button">데이터 가져오기</button> -->
-                <button class="button" onclick="GetStoreList();">데이터 가져오기(app copy)</button>
+                <button class="button" onclick="GetStoreList();">데이터 가져오기</button>
             </div>
 
             <div id ="data-layout"> 
                 <p id="result0"></p>
                 <p id="result1"></p>
                 <p id="result2"></p>
-                <div class="chart-container" style="position: relative; height:100px;">
-                    <canvas id="line-chart"></canvas>
-                </div>
+                <p id="result3"></p>
+            </div>
+
+            <div class="chart-container" style="position: relative; height:100px;">
+                <canvas id="line-chart"></canvas>
             </div>
         </section>
         <!-- <section id="footer">footer</section>     -->
     </div>
+    <!-- <footer>Made My xeezeong</footer> -->
 </body>
 </html>
