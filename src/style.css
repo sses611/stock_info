@@ -42,13 +42,13 @@ header h1{
 
 /* content css */
 #main-content{
-    padding : 80px;
+    padding : 0px 80px;
 }
 
 #main-content #data-box{
     display: flex;
     justify-content: space-around;
-    margin-bottom: 80px;
+    margin: 40px 80px;
 }
 
 #data-box *{
@@ -71,8 +71,7 @@ header h1{
 
 #data-layout{
     display : flex;
-    justify-content: space-around;
-
+    justify-content: space-between;
 }
 
 #data-layout .stock-info{
@@ -86,6 +85,9 @@ header h1{
 }
 
 #data-layout .stock-info{
+    display : flex;
+    margin-bottom: 0px 40px;
+    border-bottom: 0.5px solid #222;
     font-size: 20px;
     font-weight: 600;
     color : #222;
