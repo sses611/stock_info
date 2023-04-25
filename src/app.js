@@ -1,6 +1,5 @@
 var req_url = 'http://apis.data.go.kr/1160100/service/GetStocDiviInfoService/getDiviInfo'
 var serviceKeyStr = "yVuS2h%2Fn6vH7khxL68QEYxgERpm6yXqauRIDptTSGqAlehwhW5E4PQ9CJO4y%2FoxGujJHRXd3H8D%2BOuv5Vfhldw%3D%3D"
-var Stitle = document.getElementById('stock-title');
 
 function OutPutString(message, flag, tag)
 {
@@ -46,14 +45,14 @@ function LoadData(url, mode) {
             {
                 if (mode == 0) // 주식배당정보
                     ParseJSON0(data);
-                // else if (mode == 1) // 주식발행정보
-                //     ParseJSON1(data);
-                // else if (mode == 2) // 주식시세정보
-                // {
-                //     stockData = data;
-                //     stockIndex = 0;
-                //     ParseJSON2(stockData, stockIndex);
-                // }
+                else if (mode == 1) // 주식발행정보
+                    ParseJSON1(data);
+                else if (mode == 2) // 주식시세정보
+                {
+                    stockData = data;
+                    stockIndex = 0;
+                    ParseJSON2(stockData, stockIndex);
+                }
                 
             } catch (e) {
                 if(mode == -1)
@@ -77,7 +76,7 @@ function ParseDate(str) {
 }
 function ParseJSON0(data) {
     item = data.response.body.items.item[0];
-
+    var Stitle = document.getElementById('stock-title');
     Sname = item.stckIssuCmpyNm + ' ' + item.scrsItmsKcdNm;
     Stitle.innerHTML = '<h2 class="Sinfo">'+Sname+'</h2>'
 
@@ -93,7 +92,7 @@ function ParseJSON0(data) {
     {
         OutPutString(
         '<ul><b class="stock-info">주식정보</b>' + '' +
-        '<li>법인등록번호' + item.crno + '</li>' +
+        '<li>법인등록번호' + '<span' +item.crno +'</spn>'+'</li>' +
         '<li>주식발행회사명' + item.stckIssuCmpyNm + '</li>' +
         '<li>국제증권식별번호코드' + item.isinCd + '</li>' +
         '<li>국제증권식별번호코드명' + item.isinCdNm + '</li>' +
