@@ -2,7 +2,13 @@
 
 * { font-family: 'Spoqa Han Sans Neo', 'sans-serif'; }
 html{ font-family: 'Spoqa Han Sans Neo';}
-li{ list-style: none;}
+
+li{ 
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    font-size : 18px;
+}
 
 header {
     display : flex;
@@ -86,12 +92,15 @@ button{
     display: flex;
     justify-content: space-around;
     margin: 40px 80px;
-    font-size: 18px;
     font-weight: 400;
  }
 .infos{
     width : 400px;
     height: 500px;
+}
+
+.infos li{
+    margin: 10px;
 }
 
 #data-layout .stock-info{
