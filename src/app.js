@@ -162,9 +162,7 @@ function ParseJSON2(data, id) {
         '<li>고가' + '<span>' + new Intl.NumberFormat().format(item.hipr) + '원</span></li>' +
         '<li>저가' + '<span>' + new Intl.NumberFormat().format(item.lopr) + '원</span></li>' +
         '<li>거래량' + '<span>' + new Intl.NumberFormat().format(item.trqu) + '주</span></li>' +
-        '<li>거래대금' + '<span>' + new Intl.NumberFormat().format(item.trPrc) + '원</span></li>' +
-        '<button class="button" onclick="PrevData();">이전 날짜</button> <button class="button" onclick="NextData();">다음 날짜</button>'
-        , false, 'result2');
+        '<li>거래대금' + '<span>' + new Intl.NumberFormat().format(item.trPrc) + '원</span></li>', false, 'result2');
 
         var labelArr = [];
         for (var i=id; i>=0; i--) {

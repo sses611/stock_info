@@ -70,6 +70,7 @@ header h1{
     height: 100%;
     font-family: 'Spoqa Han Sans Neo';
     font-size: 24px;
+    text-align: center;
     font-weight: 600;
     padding :10px;
     text-align: center;
@@ -78,7 +79,17 @@ header h1{
     border-style: none;
     border-radius: 10px;
     border-bottom: 3px solid #f7f7f7;
+    cursor : pointer;
 }
+
+#data-box .Datebtn{
+    background-color: #ededed;
+    color : #222;
+    width: auto;
+    border-style: none;
+    border-radius: 10px;
+}
+
 
 button{
     background-color: #3182f6;
@@ -86,6 +97,8 @@ button{
     border-style: none;
     border-radius: 5px;
 }
+
+
 
 
 #data-layout{
