@@ -76,7 +76,7 @@ function ParseDate(str) {
 }
 function ParseJSON0(data) {
     item = data.response.body.items.item[0];
-    console.log(item);
+
     if (item === undefined)
     {
         OutPutString('<b>주식배당정보 데이터가 없습니다.</b>', false, 'result0');

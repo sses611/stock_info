@@ -15,8 +15,8 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
     <script type="text/javascript" src="./resource/chart.min.js"></script>
-    <!-- <script type="module" src="./src/app.js"></script> -->
-    <script type="text/javascript" src="./app.js"></script>
+    <script type="text/javascript" src="./src/app.js"></script>
+    <!-- <script type="text/javascript" src="./app.js"></script> -->
 
     <link rel="stylesheet" type="text/css" href="./src/reset.css">    
     <link rel="stylesheet" type="text/css" href="./src/style.css">    
@@ -44,10 +44,14 @@
                 </select>
                 <button class="button" onclick="GetStoreList();">데이터 가져오기</button>
             </div>
+
+            <div id ="stock-title">
+            </div>
+
             <div id ="data-layout"> 
-                <p id="result0" class="info"></p>
-                <p id="result1" class="info"></p>
-                <p id="result2" class="info"></p>
+                <p id="result0" class="infos"></p>
+                <p id="result1" class="infos"></p>
+                <p id="result2" class="infos"></p>
             </div>
 
             <div class="chart-container" style="position: relative; height:100px;">
