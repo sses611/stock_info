@@ -40,7 +40,10 @@ function LoadData(url, mode) {
         success: function(data) {
             try
             {
-                if (mode == 0) // 주식배당정보
+                if(mode == -1){
+                    ParseJSON11(data);
+                }
+                else if (mode == 0) // 주식배당정보
                     ParseJSON0(data);
                 else if (mode == 1) // 주식발행정보
                     ParseJSON1(data);
@@ -50,8 +53,11 @@ function LoadData(url, mode) {
                     stockIndex = 0;
                     ParseJSON2(stockData, stockIndex);
                 }
+                
             } catch (e) {
-                if (mode == 0) // 주식배당정보
+                if(mode == -1)
+                    OutPutString('<b>주식정보<br />데이터를 가져오는 동안 오류가 발생하였습니다.</b><br />' + e, false, 'result11');
+                else if (mode == 0) // 주식배당정보
                     OutPutString('<b>주식배당정보<br />데이터를 가져오는 동안 오류가 발생하였습니다.</b><br />' + e, false, 'result0');
                 else if (mode == 1) // 주식발행정보
                     OutPutString('<b>주식발행정보<br />데이터를 가져오는 동안 오류가 발생하였습니다.</b><br />' + e, false, 'result1');
@@ -68,7 +74,6 @@ function ParseDate(str) {
     var d = str.substr(6, 2);
     return y + '년 ' + m + '월 ' + d + '일';
 }
-
 function ParseJSON0(data) {
     item = data.response.body.items.item[0];
     console.log(item);
@@ -88,8 +93,7 @@ function ParseJSON0(data) {
         '<span>국제증권식별번호코드명: ' + item.isinCdNm + '<br /></span>' +
         '<span>유가증권종목종류코드　: ' + item.scrsItmsKcd + '<br /></span>' +
         '<span>유가증권종목종류코드명: ' + item.scrsItmsKcdNm + '<br /></span>' +
-        '<span>주식액면가　　　　　　: ' + new Intl.NumberFormat().format(item.stckParPrc) + '원</span></p>' +
-        '<b>주식배당정보</b>' + '<br />' +
+        '<b class="stock-info">주식배당정보</b>' + '<br />' +
         '<span>기준일자　　　　　　　　: ' + ParseDate(item.basDt) + '<br /></span>' +
         '<span>배당기준일자　　　　　　: ' + ParseDate(item.dvdnBasDt) + '<br /></span>' +
         '<span>현금배당지급일자　　　　: ' + ParseDate(item.cashDvdnPayDt) + '<br /></span>' +
@@ -103,8 +107,8 @@ function ParseJSON0(data) {
         '<span>주식일반현금배당률　　　: ' + item.stckGenrCashDvdnRt + '<br /></span>' +
         '<span>주식일반배당률　　　　　: ' + item.stckGenrDvdnRt + '<br /></span>' +
         '<span>현금차등배당률　　　　　: ' + item.cashGrdnDvdnRt + '<br /></span>' +
-        '<span>주식차등배당률　　　　　: ' + item.stckGrdnDvdnRt + '<br />' +
-        '<span>주식결산월일　　　　　　: ' + item.stckStacMd
+        '<span>주식차등배당률　　　　　: ' + item.stckGrdnDvdnRt + '<br /></span>' +
+        '<span>주식결산월일　　　　　　: ' + item.stckStacMd+ '</span>'
         , false, 'result0');
 
         // 금융위원회_주식발행정보
