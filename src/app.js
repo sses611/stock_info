@@ -76,11 +76,16 @@ function ParseDate(str) {
 }
 function ParseJSON0(data) {
     item = data.response.body.items.item[0];
-    var Stitle = document.getElementById('stock-title');
-    Sname = item.stckIssuCmpyNm + ' ' + item.scrsItmsKcdNm;
-    Stitle.innerHTML = '<h2 class="Sinfo">'+Sname+'</h2>'
 
-    // sname.innerHTML = sname;
+    var spot1 = document.getElementById('Sname');
+    sname = item.stckIssuCmpyNm;
+    spot1.innerText = sname;
+
+    var spot3 = document.getElementById('SToday');
+    var date = new Date();
+    stoday = (date.getYear()+ 1900) + "년 " + (date.getMonth()+1) + "월 " + date.getDate() + "일"
+
+    spot3.innerText = stoday;
 
     if (item === undefined)
     {
@@ -143,6 +148,10 @@ function ParseJSON1(data) {
 
 function ParseJSON2(data, id) {
     item = data.response.body.items.item[id];
+
+    var spot2 = document.getElementById('Sprice');
+    sprice = new Intl.NumberFormat().format(item.clpr) + '원';
+    spot2.innerText = sprice
     if (item === undefined)
         OutPutString('<b>주식시세정보 데이터가 없습니다.</b>', false, 'result2');
     else

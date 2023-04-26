@@ -57,12 +57,15 @@ header h1{
     margin: 40px;
 }
 
-#Sinfo{
-    display : flex;
+#stock-title{
+    display: flex;
     justify-content: space-around;
+    align-items: center;
+    margin: 0 40px;
+    padding : 40px 0;
     font-size: 32px;
     font-weight: 600px;
-
+    border-bottom: 3px solid #f7f7f7;
 }
 
 #data-box *{
@@ -99,8 +102,6 @@ button{
 }
 
 
-
-
 #data-layout{
     display: flex;
     justify-content: space-around;
@@ -134,9 +135,8 @@ button{
 .chart-container{
     display : flex;
     justify-content: center;
-    width: auto;
     position: relative;
-    height:100px
+
 }
 
 footer{
