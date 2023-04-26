@@ -55,8 +55,8 @@ function SelectStockDiv(data) {
     }
     else
     {
-        OutPutString('<b>' + item.stckIssuCmpyNm + ' ' + item.scrsItmsKcdNm + '</b><br />' +
-        '<><ul class="stock-info">주식정보</ul>' + '<br /></li>' +
+        OutPutString(`'<b>'${item.stckIssuCmpyNm}' '${item.scrsItmsKcdNm}</b><br/>` +
+        `<ul class="stock-info">주식정보</ul><br /></li>` +
         '<li>법인등록번호　　　　　: ' + item.crno + '<br /></li>' +
         '<li>주식발행회사명　　　　: ' + item.stckIssuCmpyNm + '<br /></li>' +
         '<li>국제증권식별번호코드　: ' + item.isinCd + '<br /></li>' +

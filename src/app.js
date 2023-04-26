@@ -97,29 +97,29 @@ function ParseJSON0(data) {
     {
         // OutPutString(
         //     '<b class="stock-info">주식정보</b>' + '' +
-        //     '<li>법인등록번호' + '<span>' + item.crno +'</spn>' +'</li>' +
-        //     '<li>주식발행회사명' + '<span>' + item.stckIssuCmpyNm +'</span>' + '</li>' +
-        //     '<li>국제증권식별번호코드' + '<span>' + item.isinCd +'</span>' + '</li>' +
-        //     '<li>국제증권식별번호코드명' + '<span>' + item.isinCdNm +'</span>' + '</li>' +
+        //     '<li>법인등록번호<span>' + item.crno +'</spn>' +</li>` +
+        //     '<li>주식발행회사명<span>' + item.stckIssuCmpyNm +'</span>' + '</li>' +
+        //     '<li>국제증권식별번호코드<span>' + item.isinCd +'</span>' + '</li>' +
+        //     '<li>국제증권식별번호코드명<span>' + item.isinCdNm +'</span>' + '</li>' +
         //     '<li>유가증권종목종류코드' +  '<span>' +item.scrsItmsKcd +'</span>' + '</li>' +
-        //     '<li>유가증권종목종류코드명' + '<span>' + item.scrsItmsKcdNm +'</span>' + '</li></ui>' +
+        //     '<li>유가증권종목종류코드명<span>' + item.scrsItmsKcdNm +'</span>' + '</li></ui>' +
 
-        OutPutString('<b class="stock-info">주식배당정보</b>' + '' +
-        '<li>기준일자' + '<span>' + ParseDate(item.basDt) +'</span>' + '</li>' +
-        '<li>배당기준일자' + '<span>' + ParseDate(item.dvdnBasDt) +'</span>'+ '</li>' +
-        '<li>현금배당지급일자' + '<span>' + ParseDate(item.cashDvdnPayDt)  +'</span>'+ '</li>' +
-        '<li>주식교부일자' + '<span>' + ParseDate(item.stckHndvDt)  +'</span>'+ '</li>' +
-        '<li>주식배당사유코드' + '<span>' + item.stckDvdnRcd  +'</span>'+ '</li>' +
-        '<li>주식배당사유코드명' + '<span>' + item.stckDvdnRcdNm  +'</span>'+ '</li>' +
-        '<li>명의개서대리인구분코드' + '<span>' + item.trsnmDptyDcd  +'</span>'+ '</li>' +
-        '<li>명의개서대리인구분코드명' + '<span>' + item.trsnmDptyDcdNm  +'</span>'+ '</li>' +
-        '<li>주식일반배당금액' + '<span>' +  new Intl.NumberFormat().format(item.stckGenrDvdnAmt) + '원</span></li>' +
-        '<li>주식차등배당금액'  + '<span>' + new Intl.NumberFormat().format(item.stckGrdnDvdnAmt) + '원</span></li>' +
-        '<li>주식일반현금배당률'  + '<span>' + item.stckGenrCashDvdnRt  +'</span>'+ '</li>' +
-        '<li>주식일반배당률'  + '<span>' + item.stckGenrDvdnRt +'</span>'+ '</li>' +
-        '<li>현금차등배당률'  + '<span>' + item.cashGrdnDvdnRt +'</span>'+ '</li>' +
-        '<li>주식차등배당률'  + '<span>' + item.stckGrdnDvdnRt +'</span>'+ '</li>' +
-        '<li>주식결산월일'  + '<span>' + item.stckStacMd+ '<span></li><ul>'
+        OutPutString(`<b class="stock-info">주식배당정보</b> `+
+        `<li>기준일자<span>${ParseDate(item.basDt)}</span></li>` +
+        `<li>배당기준일자<span>${ParseDate(item.dvdnBasDt)}</span></li>`+
+        `<li>현금배당지급일자<span>${ParseDate(item.cashDvdnPayDt)}</span></li>` +
+        `<li>주식교부일자<span>${ParseDate(item.stckHndvDt)}</span></li>` +
+        `<li>주식배당사유코드<span>${item.stckDvdnRcd}</span></li>` +
+        `<li>주식배당사유코드명<span>${item.stckDvdnRcdNm}</span></li>` +
+        `<li>명의개서대리인구분코드<span>${item.trsnmDptyDcd}</span></li>` +
+        `<li>명의개서대리인구분코드명<span>+${item.trsnmDptyDcdNm}</span></li>` +
+        `<li>주식일반배당금액<span>${new Intl.NumberFormat().format(item.stckGenrDvdnAmt)}원</span></li>` +
+        `<li>주식차등배당금액<span>${new Intl.NumberFormat().format(item.stckGrdnDvdnAmt)}원</span></li>`+
+        `<li>주식일반현금배당률<span>${item.stckGenrCashDvdnRt}</span></li>` +
+        `<li>주식일반배당률<span>${item.stckGenrDvdnRt}</span></li>` +
+        `<li>현금차등배당률<span>${item.cashGrdnDvdnRt}</span></li>` +
+        `<li>주식차등배당률<span>${item.stckGrdnDvdnRt}</span></li>` +
+        `<li>주식결산월일<span>${item.stckStacMd}<span></li><ul>`
         , false, 'result0');
 
         // 금융위원회_주식발행정보
@@ -135,14 +135,14 @@ function ParseJSON1(data) {
     if (item === undefined)
         OutPutString('<b>주식발행정보 데이터가 없습니다.</b>', false, 'result1');
     else
-        OutPutString('<b class="stock-info">주식발행정보</b>'  +
-        '<li>기준일자'+ '<span>' + ParseDate(item.basDt) + '</span></li>' +
-        '<li>발행주식수'+ '<span>' + new Intl.NumberFormat().format(item.issuStckCnt) + '주</span></li>' +
-        '<li>상장일자' + '<span>' + ParseDate(item.lstgDt) + '</span></li>' +
-        '<li>상장폐지일자'+ '<span>' + ParseDate(item.lstgAbolDt) + '</span></li>' +
-        '<li>예탁등록일자'+ '<span>' + ParseDate(item.dpsgRegDt) + '</span></li>' +
-        '<li>예탁취소일자'+ '<span>' + ParseDate(item.dpsgCanDt) + '</span></li>' +
-        '<li>발행형태구분명'+ '<span>' + item.issuFrmtClsfNm +'</span>'
+        OutPutString(`<b class="stock-info">주식발행정보</b>` +
+        `<li>기준일자<span>${ParseDate(item.basDt)}</span></li>` +
+        `<li>발행주식<span>${new Intl.NumberFormat().format(item.issuStckCnt)}주</span></li>` +
+        `<li>상장일자<span>${ParseDate(item.lstgDt)}</span></li>` +
+        `<li>상장폐지일자<span>${ParseDate(item.lstgAbolDt)}</span></li>` +
+        `<li>예탁등록일자<span>${ParseDate(item.dpsgRegDt)}</span></li>` +
+        `<li>예탁취소일자<span>${ParseDate(item.dpsgCanDt)}</span></li>` +
+        `<li>발행형태구분명<span>${item.issuFrmtClsfNm}</span>`
         , false, 'result1');
 }
 
@@ -156,22 +156,22 @@ function ParseJSON2(data, id) {
         OutPutString('<b>주식시세정보 데이터가 없습니다.</b>', false, 'result2');
     else
     {
-        OutPutString('<b class="stock-info">주식시세정보</b>' +
-        '<li>기준일자' + '<span>' + ParseDate(item.basDt) + '</span></li>' +
-        '<li>종목코드' + '<span>' + item.srtnCd + '</span></li>' +
-        '<li>표준코드' + '<span>' + item.isinCd + '</span></li>' +
-        '<li>종목이름' + '<span>' + item.itmsNm + '</span></li>' +
-        '<li>시장구분' + '<span>' + item.mrktCtg + '</span></li>' +
-        '<li>상장주식수'+ '<span>' + new Intl.NumberFormat().format(item.lstgStCnt) + '주</span></span></li>' +
-        '<li>시가총액'+ '<span>' + new Intl.NumberFormat().format(item.mrktTotAmt) + '원</span></li>' +
-        '<li>종가' + '<span>' + new Intl.NumberFormat().format(item.clpr) + '원</span></li>' +
-        '<li>전일비' + '<span>' + new Intl.NumberFormat().format(item.vs) + '원</span></li>' +
-        '<li>등락률'+ '<span>' + item.fltRt + '%</span></li>' +
-        '<li>시가' + '<span>' +new Intl.NumberFormat().format(item.mkp) + '원</span></li>' +
-        '<li>고가' + '<span>' + new Intl.NumberFormat().format(item.hipr) + '원</span></li>' +
-        '<li>저가' + '<span>' + new Intl.NumberFormat().format(item.lopr) + '원</span></li>' +
-        '<li>거래량' + '<span>' + new Intl.NumberFormat().format(item.trqu) + '주</span></li>' +
-        '<li>거래대금' + '<span>' + new Intl.NumberFormat().format(item.trPrc) + '원</span></li>', false, 'result2');
+        OutPutString(`<b class="stock-info">주식시세정보</b>` +
+        `<li>기준일자<span>${ParseDate(item.basDt)}</span></li>` +
+        `<li>종목코드<span>${item.srtnCd}</span></li>` +
+        `<li>표준코드<span>${item.isinCd}</span></li>` +
+        `<li>종목이름<span>${item.itmsNm}</span></li>` +
+        `<li>시장구분<span>${item.mrktCtg}</span></li>` +
+        `<li>상장주식수<span>${new Intl.NumberFormat().format(item.lstgStCnt)}주</span></span></li>` +
+        `<li>시가총액<span>${new Intl.NumberFormat().format(item.mrktTotAmt)}원</span></li>` +
+        `<li>종가<span>${new Intl.NumberFormat().format(item.clpr)}원</span></li>` +
+        `<li>전일비<span>${new Intl.NumberFormat().format(item.vs)}원</span></li>` +
+        `<li>등락률<span>${item.fltRt}%</span></li>` +
+        `<li>시가<span>${new Intl.NumberFormat().format(item.mkp)}원</span></li>` +
+        `<li>고가<span>${new Intl.NumberFormat().format(item.hipr)}원</span></li>` +
+        `<li>저가<span>${new Intl.NumberFormat().format(item.lopr)}원</span></li>` +
+        `<li>거래량<span>${new Intl.NumberFormat().format(item.trqu)}주</span></li>` +
+        `<li>거래대금<span>${new Intl.NumberFormat().format(item.trPrc)}원</span></li>`, false, 'result2');
 
         var labelArr = [];
         for (var i=id; i>=0; i--) {
