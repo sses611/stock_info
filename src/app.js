@@ -203,6 +203,8 @@ function ParseJSON2(data, id) {
             }
         });
     }
+    var spot3 = document.getElementById('SToday');
+    spot3.innerText = ParseDate(item.basDt);
 }
 
 function PrevData() {
