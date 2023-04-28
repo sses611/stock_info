@@ -109,7 +109,7 @@ header h1 {
 }
 
 
-@media (max-width : 1500px; ) {
+@media (max-width : 1500px ) {
     #data-box .Datebtn button {
         padding-left: 15px;
     }
