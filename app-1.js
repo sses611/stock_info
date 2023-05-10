@@ -1,11 +1,6 @@
 var req_url = 'http://apis.data.go.kr/1160100/service/GetStocDiviInfoService/getDiviInfo'
 var serviceKeyStr = "yVuS2h%2Fn6vH7khxL68QEYxgERpm6yXqauRIDptTSGqAlehwhW5E4PQ9CJO4y%2FoxGujJHRXd3H8D%2BOuv5Vfhldw%3D%3D"
 
-window.onload = () => {
-    init();
-}
-
-
 function OutPutString(message, flag, tag)
 {
     var resultDiv = document.getElementById(tag);
