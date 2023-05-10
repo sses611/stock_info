@@ -1,6 +1,26 @@
 var req_url = 'http://apis.data.go.kr/1160100/service/GetStocDiviInfoService/getDiviInfo'
 var serviceKeyStr = "yVuS2h%2Fn6vH7khxL68QEYxgERpm6yXqauRIDptTSGqAlehwhW5E4PQ9CJO4y%2FoxGujJHRXd3H8D%2BOuv5Vfhldw%3D%3D"
 
+window.onload = () => {
+    init();
+}
+
+function init(){
+    ChartInit(); // 차트초기화
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 function OutPutString(message, flag, tag)
 {
     var resultDiv = document.getElementById(tag);
@@ -23,9 +43,7 @@ function GetStoreList() {
     OutPutString('', true, 'result1');
     OutPutString('', true, 'result2');
 
-    
     ChartInit(); // 차트초기화
-
 
     //금융위원회_주식배당정보
     LoadData(req_url+"?pageNo=1&numOfRows=1&resultType=json&stckIssuCmpyNm=" +
@@ -33,8 +51,6 @@ function GetStoreList() {
 } 
 
 function LoadData(url, mode) {
-
-
     $.ajax({
         crossOrigin: true,
         proxy: "proxy.php",
