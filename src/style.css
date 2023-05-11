@@ -9,6 +9,8 @@ html {
 }
 
 li {
+    margin : 0;
+    padding : 0;
     display: flex;
     justify-content: space-between;
     list-style: none;
@@ -68,10 +70,9 @@ header h1 {
 
 #stock-title {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    /* justify-content: space-around; */
     align-items: center;
-    margin: 0 40px;
-    padding: 40px 0;
     border-bottom: 3px solid #f7f7f7;
 }
 
@@ -145,13 +146,14 @@ header h1 {
 #data-layout {
     display: flex;
     justify-content: space-around;
-    margin: 40px 80px;
+    margin : 40px 0;
     font-weight: 400;
 }
 
 .infos {
     width: 400px;
-    height: 500px;
+    height: auto;
+    border : 1px solid #eee;
 }
 
 .infos li {
