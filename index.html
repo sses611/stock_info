@@ -1,64 +1,69 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Cache-Control" content="no-cache"> 
-    
+    <!--     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-
-    <script type="text/javascript" src="./resource/chart.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+    
+    <!-- <script type="text/javascript" src="./resource/chart.min.js"></script> -->
     <script type="text/javascript" src="./app-1.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="./src/reset.css">    
+    <link rel="stylesheet" type="text/css" href="./src/reset.css">
     <link rel="stylesheet" type="text/css" href="./src/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
     <header>
-        <img src="./img/tossStock.svg" alt="logo" id="logo" />
-        <h1></h1>
+        <!-- <img src="./img/tossStock.svg" alt="logo" id="logo" /> -->
+        <h1>Stock</h1>
         <div id="user">
             <img src="./img/menu.svg" alt="Setting" id="set">
             <img src="./img/face.svg" alt="User" id="user">
         </div>
     </header>
 
-    <div id ="wrap">
-        <section id="main-content">
-            <div id="data-box">
-                <input id="Stockname" type="text" value="삼성전자" />
-                <select id="Stocktype">
+    <section id="main-content">
+        <div id="data-box">
+            <div id="input-search">
+                <input id="stock-name" type="text" value="삼성전자" />
+                <img id="search" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png" alt="">
+            </div>
+            <select id="stock-type">
                     <option>보통주</option>
                     <option>우선주</option>
-                </select>
-                <div id="btn-wrapper">
-                    <button class="Datebtn" onclick="PrevData();">이전</button> 
-                    <button class="Datebtn" onclick="NextData();">다음</button>
-                    <button onclick="GetStoreList();">조회</button>
-                </div>
+            </select>
+           
+            <div id="btn-wrapper">
+               
+                <button id="pre-button"class="Datebtn" >이전</button>
+                <button id="next-button"class="Datebtn">다음</button>
+                <button id="insert-button">조회</button>
             </div>
+        </div>
 
-            <div id ="stock-title">
-                <span class="Sinfo" id="Sname"></span>
-                <span class="Sinfo" id="Sprice"></span>
-                <span class="Sinfo" id="SToday"></span>
-            </div>
+        <div id="stock-title">
+            <span class="Sinfo" id="Sname"></span>
+            <span class="Sinfo" id="Sprice"></span>
+            <span class="Sinfo" id="SToday"></span>
+        </div>
 
-            <div id ="data-layout">         
-                <ul id="result0" class="infos"></ul>
-                <ul id="result1" class="infos"></ul>
-                <ul id="result2" class="infos"></ul>
-            </div>
+        <div id="data-layout">
+            <ul id="result0" class="infos"></ul>
+            <ul id="result1" class="infos"></ul>
+            <ul id="result2" class="infos"></ul>
+        </div>
 
-            <div class="chart-container">
-                <canvas id="line-chart"></canvas>
-            </div>
-        </section>
-        <!-- <section id="footer">footer</section>     -->
-    </div>
+        <div class="chart-container">
+            <canvas id="line-chart"></canvas>
+        </div>
+    </section>
+    <!-- <section id="footer">footer</section>     -->
     <!-- <footer>Made My xeezeong</footer> -->
 </body>
+
 </html>

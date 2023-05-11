@@ -80,30 +80,50 @@ header h1 {
 }
 
 #data-box * {
-    background-color: #ededed;
     height: 48px;
     font-family: 'Spoqa Han Sans Neo';
     font-size: 24px;
     font-weight: 600;
-    border-style: none;
-    border-radius: 10px;
+    /* border-style: none; */
+    border-radius: 12px;
     cursor: pointer;
     letter-spacing: 3px;
+    text-align : center;
+}
+
+#data-box #input-search {
+    position : relative
+}
+
+#data-box #input-search #search{
+    width : 26px;
+    height : 26px;
+    position : absolute;
+    top : 14px;
+    right : 15px;
+    margin : 0;
+}
+
+
+#data-box #stock-type{
+    width : 170px;
 }
 
 #btn-wrapper {
     border-style: none;
     display: flex;
     border-radius: 10px;
-
+    gap : 10px;
 }
 
 #btn-wrapper .Datebtn {
+    width: 80px;
     background-color: #ededed;
     color: #222;
 }
 
 #btn-wrapper button {
+    width: 80px;
     background-color: #3182f6;
     color: #fff;
 }
