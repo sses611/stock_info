@@ -145,13 +145,13 @@ header h1 {
 
 #data-layout {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     margin : 40px 0;
     font-weight: 400;
 }
 
 .infos {
-    width: 400px;
+    width: 500px;
     height: auto;
     border : 1px solid #eee;
 }
